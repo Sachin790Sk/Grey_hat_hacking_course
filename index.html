@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crackshash_mod - Advanced Grey Hat Hacking Course</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.jsdelivr.net/gh/tailwindlabs/heroicons@latest/optimized/24/outline/code-bracket.svg') no-repeat;
+            background-position: right -50px bottom -50px;
+            background-size: 300px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .section {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #00aaff;
+        }
+        .card {
+            background-color: #252525;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border-color: #00aaff;
+        }
+        .highlight {
+            color: #00aaff;
+        }
+        .accent {
+            color: #00cc66;
+        }
+        .warning {
+            color: #ff6b6b;
+        }
+        .btn {
+            background: linear-gradient(135deg, #0088cc 0%, #00aaff 100%);
+            color: white;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 6px;
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.4);
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #00aaff 0%, #0088cc 100%);
+            box-shadow: 0 6px 15px rgba(0, 136, 204, 0.5);
+            transform: translateY(-2px);
+        }
+        .download-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .download-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(0, 170, 255, 0.1) 0%, rgba(0, 170, 255, 0) 70%);
+            pointer-events: none;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00aaff 0%, #00cc66 100%);
+            border-radius: 5px;
+            width: 75%;
+        }
+        .module-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .module-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #00aaff;
+        }
+        .instructor-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .instructor-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 3px solid #00aaff;
+            font-size: 40px;
+            color: #00aaff;
+        }
+        .tag {
+            display: inline-block;
+            background-color: rgba(0, 170, 255, 0.2);
+            color: #00aaff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 170, 255, 0.7);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="hero-section p-8 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-4xl font-bold highlight glow">CRACKSHASH<span class="text-white">_MOD</span></h1>
+                    <p class="text-gray-400">Learn. Hack. Secure.</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-400">Advanced Training Series</p>
+                    <p class="text-xl highlight">EST. 2023</p>
+                </div>
+            </div>
+            <div class="mt-10 mb-6">
+                <h2 class="text-5xl font-bold mb-4">ADVANCED <span class="highlight">GREY HAT</span> HACKING</h2>
+                <p class="text-xl text-gray-300">Master the art of ethical exploitation and security testing</p>
+            </div>
+            <div class="flex flex-wrap mt-8">
+                <div class="tag">Ethical Hacking</div>
+                <div class="tag">Penetration Testing</div>
+                <div class="tag">Vulnerability Assessment</div>
+                <div class="tag">Exploit Development</div>
+                <div class="tag">Advanced Security</div>
+            </div>
+        </header>
+
+        <!-- Course Overview Section -->
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-info-circle mr-3 highlight"></i>
+                Course Overview
+            </h2>
+            <p class="mb-4">
+                The <span class="highlight">Advanced Grey Hat Hacking</span> course by Crackshash_mod is designed for security professionals and enthusiasts who want to master the delicate balance between offensive and defensive security techniques. Unlike traditional ethical hacking courses, our program focuses on the grey areas of cybersecurity, teaching you how to think like both an attacker and a defender.
+            </p>
+            <p class="mb-4">
+                Grey hat hacking involves understanding and exploiting vulnerabilities with permission, but with the intention of improving security rather than causing harm. This course will equip you with the advanced techniques used by professional security researchers while maintaining ethical boundaries and legal compliance.
+            </p>
+            <div class="card mt-6">
+                <h3 class="text-xl font-bold mb-2 accent">Why Choose This Course?</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Learn advanced exploitation techniques used in real-world scenarios</li>
+                    <li>Understand the legal and ethical boundaries of security research</li>
+                    <li>Develop skills to discover and responsibly disclose vulnerabilities</li>
+                    <li>Master both offensive and defensive security methodologies</li>
+                    <li>Build a portfolio of security research that can advance your career</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Learning Objectives Section -->
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-bullseye mr-3 highlight"></i>
+                Learning Objectives
+            </h2>
+            <p class="mb-6">By the end of this comprehensive course, you will be able to:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card">
+                    <div class="flex items-start">
+                        <div class="mr-4 text-2xl highlight">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Vulnerability Discovery</h3>
+                            <p>Identify and analyze security flaws in applications, networks, and systems using both manual and automated techniques.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="flex items-start">
+                        <div class="mr-4 text-2xl highlight">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Exploit Development</h3>
+                            <p>Create proof-of-concept exploits for discovered vulnerabilities to demonstrate their impact and severity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="flex items-start">
+                        <div class="mr-4 text-2xl highlight">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Advanced Defense</h3>
+                            <p>Implement robust security measures to protect against the very techniques you'll learn, creating a comprehensive security mindset.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="flex items-start">
+                        <div class="mr-4 text-2xl highlight">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Ethical Compliance</h3>
+                            <p>Navigate the legal and ethical considerations of security research, including responsible disclosure protocols.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="flex items-start">
+                        <div class="mr-4 text-2xl highlight">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Advanced Methodology</h3>
+                            <p>Develop a structured approach to security testing that can be applied across different environments and technologies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="flex items-start">
+                        <div class="mr-4 text-2xl highlight">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Communication Skills</h3>
+                            <p>Report findings effectively to both technical and non-technical stakeholders to drive security improvements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Highlights Section -->
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-book mr-3 highlight"></i>
+                Curriculum Highlights
+            </h2>
+            <p class="mb-6">Our comprehensive curriculum is structured to progressively build your skills from fundamental concepts to advanced techniques:</p>
+            
+            <div class="space-y-6">
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 1: Foundations of Grey Hat Hacking</h3>
+                    <ul class="module-list">
+                        <li>Understanding the spectrum: White, Grey, and Black Hat methodologies</li>
+                        <li>Legal frameworks and ethical considerations</li>
+                        <li>Setting up your secure testing environment</li>
+                        <li>Essential tools and resources for advanced security testing</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 2: Advanced Reconnaissance Techniques</h3>
+                    <ul class="module-list">
+                        <li>OSINT (Open-Source Intelligence) mastery</li>
+                        <li>Network mapping and enumeration beyond the basics</li>
+                        <li>Identifying potential entry points through comprehensive reconnaissance</li>
+                        <li>Custom tools and scripts for automated information gathering</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 3: Vulnerability Assessment & Exploitation</h3>
+                    <ul class="module-list">
+                        <li>Manual vulnerability discovery techniques</li>
+                        <li>Advanced use of vulnerability scanners and frameworks</li>
+                        <li>Developing custom exploits for discovered vulnerabilities</li>
+                        <li>Post-exploitation strategies and privilege escalation</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 4: Web Application Security Deep Dive</h3>
+                    <ul class="module-list">
+                        <li>Advanced web vulnerabilities beyond OWASP Top 10</li>
+                        <li>Custom payload development for web attacks</li>
+                        <li>Bypassing modern web application defenses</li>
+                        <li>Secure coding practices and defensive measures</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 5: Network & Infrastructure Security</h3>
+                    <ul class="module-list">
+                        <li>Advanced network attack vectors</li>
+                        <li>Infrastructure security assessment techniques</li>
+                        <li>Cloud security testing methodologies</li>
+                        <li>Securing network infrastructure against sophisticated attacks</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 6: Reverse Engineering & Malware Analysis</h3>
+                    <ul class="module-list">
+                        <li>Fundamentals of software reverse engineering</li>
+                        <li>Understanding malware behavior and techniques</li>
+                        <li>Binary analysis and exploitation</li>
+                        <li>Defensive programming against reverse engineering</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 7: Responsible Disclosure & Reporting</h3>
+                    <ul class="module-list">
+                        <li>Developing a structured disclosure process</li>
+                        <li>Creating professional security reports</li>
+                        <li>Communicating findings to different audiences</li>
+                        <li>Building your reputation as a security researcher</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3 highlight">Module 8: Capstone Project</h3>
+                    <ul class="module-list">
+                        <li>Comprehensive security assessment of a target environment</li>
+                        <li>Developing and implementing a full testing methodology</li>
+                        <li>Creating proof-of-concept exploits for discovered vulnerabilities</li>
+                        <li>Preparing and presenting professional findings and recommendations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-lg">Course Progress: <span class="highlight">75% Complete</span></p>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <p class="mt-4 text-sm text-gray-400">Our curriculum is regularly updated to include the latest security techniques and vulnerabilities.</p>
+            </div>
+        </section>
+
+        <!-- Instructor Information Section -->
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-chalkboard-teacher mr-3 highlight"></i>
+                Meet Your Instructors
+            </h2>
+            <p class="mb-6">Learn from industry experts with years of experience in offensive security, penetration testing, and security research:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card instructor-card">
+                    <div class="instructor-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Alex Mercer</h3>
+                    <p class="text-sm highlight mb-2">Lead Security Researcher</p>
+                    <p class="text-sm mb-3">Former black hat turned security educator with 15+ years of experience in vulnerability research.</p>
+                    <div class="flex space-x-2 text-gray-400">
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+                
+                <div class="card instructor-card">
+                    <div class="instructor-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Samantha Chen</h3>
+                    <p class="text-sm highlight mb-2">Exploit Development Specialist</p>
+                    <p class="text-sm mb-3">Security engineer specialized in exploit development and binary analysis with multiple CVEs to her name.</p>
+                    <div class="flex space-x-2 text-gray-400">
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+                
+                <div class="card instructor-card">
+                    <div class="instructor-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Marcus Wright</h3>
+                    <p class="text-sm highlight mb-2">Defensive Security Expert</p>
+                    <p class="text-sm mb-3">Former CISO with expertise in building defensive strategies against sophisticated attacks.</p>
+                    <div class="flex space-x-2 text-gray-400">
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mt-8">
+                <h3 class="text-xl font-bold mb-3 accent">Industry Credentials</h3>
+                <p class="mb-4">Our instructors hold certifications and qualifications including:</p>
+                <div class="flex flex-wrap gap-3">
+                    <div class="tag">OSCP</div>
+                    <div class="tag">OSCE</div>
+                    <div class="tag">CISSP</div>
+                    <div class="tag">CEH</div>
+                    <div class="tag">SANS GPEN</div>
+                    <div class="tag">SANS GXPN</div>
+                    <div class="tag">CREST</div>
+                    <div class="tag">eWPT</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Download Section -->
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-download mr-3 highlight"></i>
+                Course Download Instructions
+            </h2>
+            
+            <div class="download-card">
+                <h3 class="text-xl font-bold mb-4">Access Your Course Materials</h3>
+                <p class="mb-6">Follow these steps to download your complete course package:</p>
+                
+                <ol class="space-y-4 mb-6">
+                    <li class="flex items-start">
+                        <span class="highlight text-xl mr-3">1.</span>
+                        <div>
+                            <p><strong>Click the download link below</strong> to access the MEGA storage folder.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="highlight text-xl mr-3">2.</span>
+                        <div>
+                            <p><strong>Create a MEGA account</strong> if you don't already have one (it's free and only takes a minute).</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="highlight text-xl mr-3">3.</span>
+                        <div>
+                            <p><strong>Download the entire folder</strong> to get all course materials including videos, labs, resources, and exercises.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="highlight text-xl mr-3">4.</span>
+                        <div>
+                            <p><strong>Set up your lab environment</strong> following the instructions in the "Getting Started" document.</p>
+                        </div>
+                    </li>
+                </ol>
+                
+                <div class="bg-black p-4 rounded-lg mb-6">
+                    <p class="text-gray-400 mb-2 text-sm">Course Download Link:</p>
+                    <a href="https://mega.nz/folder/5sBDWayb#81KGFEcalX_unuq4iupmhw" class="text-white break-all hover:text-highlight" target="_blank">https://mega.nz/folder/5sBDWayb#81KGFEcalX_unuq4iupmhw</a>
+                </div>
+                
+                <div class="bg-yellow-900 bg-opacity-30 border border-yellow-800 rounded p-4 mb-6">
+                    <p class="flex items-start">
+                        <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 mt-1"></i>
+                        <span><strong class="text-yellow-500">Important:</strong> All course materials are provided for educational purposes only. Always practice ethical hacking principles and obtain proper authorization before testing any systems.</span>
+                    </p>
+                </div>
+                
+                <a href="https://mega.nz/folder/5sBDWayb#81KGFEcalX_unuq4iupmhw" class="btn" target="_blank">
+                    <i class="fas fa-download mr-2"></i> Download Course Materials
+                </a>
+            </div>
+        </section>
+        
+        <!-- Additional Information -->
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-question-circle mr-3 highlight"></i>
+                Frequently Asked Questions
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="card">
+                    <h3 class="font-bold mb-2">What prerequisites are required for this course?</h3>
+                    <p>You should have basic knowledge of networking, operating systems (Linux/Windows), and programming fundamentals. Some experience with basic security tools is helpful but not mandatory.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="font-bold mb-2">Is this course legal? Will I get in trouble?</h3>
+                    <p>Yes, the course is legal when you follow the ethical guidelines provided. We emphasize legal compliance and responsible testing throughout the program. All exercises should only be performed in your lab environment or with explicit permission.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="font-bold mb-2">How long will I have access to the course materials?</h3>
+                    <p>Once downloaded, you'll have lifetime access to all course materials and future updates. We recommend backing up the files to your preferred storage solution.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="font-bold mb-2">Is there support available if I get stuck?</h3>
+                    <p>Yes, enrolled students can access our private forum and Discord community where instructors and fellow students can help with questions and challenges.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="flex justify-center mb-4">
+                <div class="text-3xl font-bold highlight glow">CRACKSHASH<span class="text-white">_MOD</span></div>
+            </div>
+            <p class="mb-2">Advanced Grey Hat Hacking Course</p>
+            <p class="text-sm text-gray-500">© 2023 Crackshash_mod. All rights reserved.</p>
+            <p class="text-xs text-gray-600 mt-3">Disclaimer: This course is for educational purposes only. Always practice ethical hacking and obtain proper authorization.</p>
+        </footer>
+    </div>
+</body>
+</html>
